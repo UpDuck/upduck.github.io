@@ -1,0 +1,22 @@
+[{
+    "type": "[pipe|local|hidden]",
+    "producer": "[obs|server|client]",
+    "consumer": "[obs|server|client]",
+    "name": "command_name",
+    "keywords": ["command"],
+    "short": "short description",
+    "desc": "longer description of what the command does",
+    "margs": ["delay"],
+    "nargs": [
+        {
+            "key": "arg",
+            "desc": "description of what this arg is for",
+            "type": "type",
+            "required": true
+        }],
+    "vargs": {
+        "desc": "description of what vargs do; if not supported set max|max to 0",
+        "min": 0,
+        "max": 0
+    }
+}]

@@ -1,0 +1,14 @@
+.. _*_ mode: rst _*_
+
+
+{% for item in data %}
+{{ item.name }}
+---------------
+
+Producer: {{ item.producer }}
+
+Consumer: {{ item.consumer }}
+
+Keywords: {{ item.keywords|join(", ") }}
+
+{% endfor %}
