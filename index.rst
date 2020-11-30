@@ -1,6 +1,8 @@
 Welcome to Up Duck's documentation!
 ===================================
 
+.. note: this is a documentation site for both UP Deck and Up Duck
+
 .. _Up Deck: http://8up.uk
 .. _godot engine: https://godotengine.org/
 
@@ -11,8 +13,6 @@ various reasons among them:
 * The mobile app (Corona/Solar2d) and server (Love2d) are written in different engines.
 
 Godot offers some solution to the last one, in that It can target HTML5, Android, iOS, Win, Mac, and Linux all from the same codebase.
-
-.. todolist::
 
 Compatibility
 -------------
@@ -44,11 +44,6 @@ documents that only apply to **Up Duck**.
    :caption: Working with commands
 
    updeck/commands
-
-.. todo:: fix this
-
-.. todo:: and thi
-
 
 Indices and tables
 ==================
