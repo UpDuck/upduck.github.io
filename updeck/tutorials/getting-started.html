@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started &#8212; Up Duck 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction to buttons" href="intro-to-buttons.html" />
+    <link rel="prev" title="Welcome to Up Duck’s documentation!" href="../../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>UP Deck is comprised of three components in order to do its thing:</p>
+<ul class="simple">
+<li><p>Mobile App</p></li>
+<li><p>UP Deck Server</p></li>
+<li><p>OBS Lua script</p></li>
+</ul>
+<div class="section" id="mobile-app">
+<h2>Mobile App<a class="headerlink" href="#mobile-app" title="Permalink to this headline">¶</a></h2>
+<p>The mobile app is the preferred interface for working with your deck.
+Android and iOS versions are available on their respective stores.</p>
+</div>
+<div class="section" id="up-deck-server">
+<h2>UP Deck server<a class="headerlink" href="#up-deck-server" title="Permalink to this headline">¶</a></h2>
+<p>UP Deck Server is a lua application written on top of the <a class="reference external" href="https://love2d.org/">love2d</a> engine,
+this allows the server to be portable to Windows, macOS and Linux</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A GPU Driver Capable of OpenGL ES 2.0 is required</p>
+</div>
+<div class="section" id="windows-and-macos">
+<h3>Windows and macOS<a class="headerlink" href="#windows-and-macos" title="Permalink to this headline">¶</a></h3>
+<p>For Windows and macOS, simply <a class="reference external" href="downloadapp">download the desktop app</a> and use the installer to
+set up both the server and install love2d if it’s not already.</p>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>For Linux <a class="reference external" href="downloadapp">download the desktop app</a> and use your distribution’s installer to
+install a version of <a class="reference external" href="https://love2d.org/">love2d</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># apt-get install love</span>
+</pre></div>
+</div>
+<p>You can launch the app via the CLI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ love UPDeck_xxx.love
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="obs-lua-script">
+<h2>OBS Lua script<a class="headerlink" href="#obs-lua-script" title="Permalink to this headline">¶</a></h2>
+<p>You can <a class="reference external" href="downloadobs">Download the OBS lua script</a> and save it just about anywhere. To
+install it simply Launch OBS and go to <span class="menuselection">Tools ‣ Scripts</span>
+and use the ( <strong>+</strong> ) to add the script.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Set the message path. OBS will not respond with out it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some times the script is not copied or configured when creating a new
+Scene Collection in OBS, this appears to be an OBS bug, check your message
+path is still configured after creating a new Scene Collection.</p>
+</div>
+<p>The only important attribute here is the <strong>Message Path</strong> it needs to be set
+to the folder that the UP Deck server is running from.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Linux it may be necessary to link <code class="docutils literal notranslate"><span class="pre">libobs.so</span></code> and <code class="docutils literal notranslate"><span class="pre">libobs.so.1</span></code></p>
+</div>
+<div class="section" id="message-path">
+<h3>Message Path<a class="headerlink" href="#message-path" title="Permalink to this headline">¶</a></h3>
+<p>The message path is used by both OBS and the UP Deck Server to communicate
+with each other using files at this path. The path on the server side can not
+be modified.</p>
+<p>You can quickly find the path by double clicking on the UP Deck Server body
+while its running and save the <strong>Settings</strong> page, this will copy the path to
+your clipboard.</p>
+<p>If you still can’t find the message path it will vary depending on your
+operating system</p>
+<p><strong>Known Problems</strong>:</p>
+<ul class="simple">
+<li><p>It’s been reported that paths that contain extended characters may not work,
+this is likely due to the version of lua built into OBS as it may not support
+characters beyond the standard ascii table.</p></li>
+<li><p>If you run OBS as an administrator on Windows, you may find it necessary to
+run UP Deck as an administrator as well. (UP Deck generally does not need to
+be run as Administrator)</p></li>
+</ul>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<p>Open the windows menu and type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">appdata</span><span class="o">%</span>\<span class="n">UPDeck</span>\
+</pre></div>
+</div>
+<p>Then copy and paste the resolved path from explorer into the
+<strong>Message Path</strong> (it should look like
+<code class="docutils literal notranslate"><span class="pre">C:\Users\YOURUSERNAME\AppData\Roaming\UPDeck)</span></code></p>
+</div>
+<div class="section" id="macos">
+<h4>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h4>
+<p>On macOS you can type into a shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="s2">&quot;~/Library/Application Support/LOVE/UPDeck/&quot;</span>
+</pre></div>
+</div>
+<p>And copy and paste the resolved path from finder (it should look like
+<code class="docutils literal notranslate"><span class="pre">/Users/user/Library/Application</span> <span class="pre">Support/LOVE/UPDeck/</span></code>)</p>
+</div>
+<div class="section" id="id2">
+<h4>Linux<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>On linux you can echo the resolved path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;${HOME}/.local/share/love/UPDeck&quot;
+</pre></div>
+</div>
+<p>Then copy and paste the resolved path into the <strong>Message Path</strong> (it should look like <code class="docutils literal notranslate"><span class="pre">/home/username/.local/share/love/UPDeck</span></code>)</p>
+</div>
+</div>
+</div>
+<div class="section" id="more-reading">
+<h2>More Reading<a class="headerlink" href="#more-reading" title="Permalink to this headline">¶</a></h2>
+<p>You can read more on the Up Deck website for info around getting familiar with
+the Apps:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="downloadapp">Download the desktop app</a></p></li>
+<li><p><a class="reference external" href="downloadobs">Download the OBS lua script</a></p></li>
+<li><p><a class="reference external" href="downloadmobile">Download the mobile app</a></p></li>
+<li><p><a class="reference external" href="appnav">Navigating around the mobile app</a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Up Duck</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-to-buttons.html">Introduction to buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-to-commands.html">Introduction to commands</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/moving-outside-the-box.html">Moving outside the box</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Working with commands</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Deck commands</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../../index.html" title="previous chapter">Welcome to Up Duck’s documentation!</a></li>
+      <li>Next: <a href="intro-to-buttons.html" title="next chapter">Introduction to buttons</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Andrew Woodawrd (xarses).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/updeck/tutorials/getting-started.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

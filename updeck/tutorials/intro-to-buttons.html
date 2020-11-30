@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to buttons &#8212; Up Duck 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction to commands" href="intro-to-commands.html" />
+    <link rel="prev" title="Getting Started" href="getting-started.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction-to-buttons">
+<h1>Introduction to buttons<a class="headerlink" href="#introduction-to-buttons" title="Permalink to this headline">¶</a></h1>
+<p>Buttons are at the heart of what Up Deck does and the can:</p>
+<ul class="simple">
+<li><p>Are part of exactly one deck</p></li>
+<li><p>Be edited</p></li>
+<li><p>Have custom icons</p></li>
+<li><p>Have a highlight</p></li>
+<li><p>Have 1, or 2 states</p></li>
+<li><p>Be part of a hilite group</p></li>
+</ul>
+<p>There are a lot of buttons, as of the more recent versions you can have up to
+500 buttons.</p>
+<div class="section" id="decks">
+<h2>Decks<a class="headerlink" href="#decks" title="Permalink to this headline">¶</a></h2>
+<p>Decks are simply a grouping of buttons. On the App, only one deck can be
+active and its not stored an any particular name. On the HTTP server you can have
+many decks and the interfaces will carry the context of which deck you are
+currently working with.</p>
+<p>You can sync individual button updates with the app if it is connected while
+you edit the button.</p>
+<p>You can restore any deck from the server onto the App. This will replace
+the active deck and restart the App, the buttons previously configured
+<strong>WILL NOT</strong> be saved, you need to determine if you want to save the current
+deck before performing a restore.</p>
+<p>You can save the App’s current deck locally or to the server if you are
+connected.</p>
+</div>
+<div class="section" id="editing-buttons">
+<h2>Editing buttons<a class="headerlink" href="#editing-buttons" title="Permalink to this headline">¶</a></h2>
+<p>Editing buttons can be accomplished one of two ways, in the mobile app, or
+via the HTTP interface on the desktop. For the mobile app, <strong>to edit a button
+simply long press on the desired button to edit it</strong>. On the HTTP interface,
+you would navigate to the <strong>Deck Buttons</strong> tab, and select the deck you want
+to edit, and then you can click on the button position and the edit interface
+will open.</p>
+</div>
+<div class="section" id="custom-icons">
+<h2>Custom Icons<a class="headerlink" href="#custom-icons" title="Permalink to this headline">¶</a></h2>
+<p>Each button (and even the second state) can have a custom Icon to represent the
+button for your own ease of identification.</p>
+<p>Icons can consist of bmp, png, jpeg and gif (it won’t animate) files.</p>
+</div>
+<div class="section" id="hilite">
+<h2>Hilite<a class="headerlink" href="#hilite" title="Permalink to this headline">¶</a></h2>
+<p>Buttons can have a hilite color wrapped around the outside of a button from
+a set of predefined colors. These take on different a different aspect if
+the button is dual-state or part of a hilight group (see blow for both).</p>
+<p>In the case of a single button, the hilite will always be visible around the
+button icon.</p>
+</div>
+<div class="section" id="singe-and-dual-state">
+<h2>Singe and dual-state<a class="headerlink" href="#singe-and-dual-state" title="Permalink to this headline">¶</a></h2>
+<p>Buttons can consist of a single state, where if you keep hitting the button
+it does the exact same thing. Alternatively they can be a dual-state toggle
+style button. In this case, the button remembers which state it was in, and
+runs the command for the other state when you hit the button again.</p>
+<p>Because of this, dual state buttons can not be part of a hilite group because
+the two states are a functionally their own highlight group. This also means
+that you can highlight the different states i.e. off/on could highlited
+red/green.</p>
+</div>
+<div class="section" id="hilite-group">
+<h2>Hilite group<a class="headerlink" href="#hilite-group" title="Permalink to this headline">¶</a></h2>
+<p>Single state buttons can optionally be part of a hilight group, in this case
+the last button pressed will have the hilite color visible.</p>
+<p>This is useful if you have multiple scene selections and want to visualize
+which one is currently active on the deck.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Up Duck</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to buttons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-to-commands.html">Introduction to commands</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/moving-outside-the-box.html">Moving outside the box</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Working with commands</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Deck commands</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="getting-started.html" title="previous chapter">Getting Started</a></li>
+      <li>Next: <a href="intro-to-commands.html" title="next chapter">Introduction to commands</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Andrew Woodawrd (xarses).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/updeck/tutorials/intro-to-buttons.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to commands &#8212; Up Duck 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Working with Elgato Stream Deck" href="../guides/stream-deck.html" />
+    <link rel="prev" title="Introduction to buttons" href="intro-to-buttons.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction-to-commands">
+<h1>Introduction to commands<a class="headerlink" href="#introduction-to-commands" title="Permalink to this headline">¶</a></h1>
+<p>Commands are what we use to tell UP Deck or OBS what to do, and how we want
+it done.</p>
+<p>All command blocks are structured the same they contain a comment line, a
+command word, and a number of named and/or positional arguments.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">comment</span> <span class="n">line</span>
+<span class="n">show</span>
+<span class="n">scene</span><span class="o">=</span><span class="n">this_scene</span>
+<span class="n">val</span><span class="o">=*</span>
+</pre></div>
+</div>
+<p>This would toggle the visibility of the scene, this_scene.</p>
+<div class="section" id="multiple-commands-in-one-button">
+<h2>Multiple Commands in one button<a class="headerlink" href="#multiple-commands-in-one-button" title="Permalink to this headline">¶</a></h2>
+<p>A button can contain 1 or more commands. this is accomplished by seperating
+each command block with a empty line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">first</span> <span class="n">command</span> <span class="n">comment</span>
+<span class="n">show</span>
+<span class="n">scene</span><span class="o">=</span><span class="n">this_scene</span>
+<span class="n">val</span><span class="o">=*</span>
+
+<span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">second</span> <span class="n">command</span> <span class="n">comment</span>
+<span class="n">openurl</span>
+<span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">10314</span><span class="o">/</span><span class="n">xdeck</span><span class="o">/</span><span class="n">deck</span><span class="o">/</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Its possible to set, and read variables in your commands. the
+<strong class="command">setvar</strong> is the primary way to set a number of variables. Variables
+can be read by prefixing them with the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Variables are local to the trigger point, if you trigger it on the app
+it will not be defined on the Server (xdeck) and vise-verse.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setup some variables
+setvar
+target=mellon
+
+switch to the target variable
+switch
+scene=$target
+</pre></div>
+</div>
+</div>
+<div class="section" id="math-expressions">
+<h2>Math Expressions<a class="headerlink" href="#math-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Its possible to evaluate math expressions <code class="docutils literal notranslate"><span class="pre">()</span> <span class="pre">%</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span> <span class="pre">+</span> <span class="pre">-</span> <span class="pre">/</span> <span class="pre">*</span></code> as well as
+functions listed in the <a class="reference external" href="coronamath">Corona Labs math library</a>. (with out
+the <code class="docutils literal notranslate"><span class="pre">math.</span></code> prefix) These expressions can be evaluated
+<strong>anywhere</strong> that the encasing square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>) occur.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>because of this feature do not use square brackets for any other
+reason in your command blocks</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>just like variables, expressions only evaluate where they
+are triggered and don’t synchronize with other apps or the server.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Add 5 to the current value
+setvar
+this_counter=[$this_counter + 5]
+</pre></div>
+</div>
+</div>
+<div class="section" id="looping">
+<h2>Looping<a class="headerlink" href="#looping" title="Permalink to this headline">¶</a></h2>
+<p>the <strong class="command">loop</strong> is a special command that causes the remaining command
+blocks to be executed multiple times</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>looping only works when triggered from inside the app</p>
+</div>
+<p>See more about <a class="reference external" href="looping">looping in the UP Deck docs</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Up Duck</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-to-buttons.html">Introduction to buttons</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to commands</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/moving-outside-the-box.html">Moving outside the box</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Working with commands</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Deck commands</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="intro-to-buttons.html" title="previous chapter">Introduction to buttons</a></li>
+      <li>Next: <a href="../guides/stream-deck.html" title="next chapter">Working with Elgato Stream Deck</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Andrew Woodawrd (xarses).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/updeck/tutorials/intro-to-commands.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
