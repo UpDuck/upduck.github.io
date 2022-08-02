@@ -44,6 +44,7 @@ documents that only apply to **Up Duck**.
    :caption: Tutorials
 
    updeck/tutorials/getting-started
+   updeck/tutorials/troubleshooting
    updeck/tutorials/intro-to-buttons
    updeck/tutorials/intro-to-commands
 
