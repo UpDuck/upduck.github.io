@@ -58,7 +58,7 @@ and use the ( **+** ) to add the script.
 The only important attribute here is the **Message Path** it needs to be set
 to the folder that the UP Deck server is running from.
 
-.. note:: On Linux it may be necessary to link ``libobs.so`` and ``libobs.so.1``
+.. note:: On Linux you may see ``libobs.so: cannot open shared object file: No such file or directory``, you will need to link ``libobs.so`` and ``libobs.so.1`` (or ``libobs.so.1``) in this case
 
 Message Path
 ____________

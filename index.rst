@@ -1,7 +1,7 @@
 Welcome to Up Duck's documentation!
 ===================================
 
-.. note: this is a documentation site for both UP Deck and Up Duck
+.. note:: this is a documentation site for both UP Deck and Up Duck
 
 .. _Up Deck: http://8up.uk
 .. _godot engine: https://godotengine.org/
@@ -13,6 +13,21 @@ various reasons among them:
 * The mobile app (Corona/Solar2d) and server (Love2d) are written in different engines.
 
 Godot offers some solution to the last one, in that It can target HTML5, Android, iOS, Win, Mac, and Linux all from the same codebase.
+
+Why a game engine? The portability is a large portion, but it also solves some
+other ancillary problems, reactive UX and sound. Godot handles the reactive UX
+very well and has a large number of builtins that make it easy to provide the
+same interface that handles scaling, and porting well, this was lacking from
+Love2d, which is likely why the app was written in Solar2d instead. The sound
+system while built in in Love2d is also primitive, and without a handful of
+third-party plugins it would be difficult to provide as many effects as are
+possible out of the box in Godot.
+
+The drawback? Like Love2d, Godot requires a video card, specifically a driver capable of OpenGL ES 2.0. Basically anything from 2008 onward should easily
+support this. This functionally should exclude some Virtual Machines (VMs) that
+don't offer a fully featured graphics driver (Azure VPS instances appear to fall
+in this group), but then again you probably want a graphics chipset to do video
+encoding anyway.
 
 Compatibility
 -------------
