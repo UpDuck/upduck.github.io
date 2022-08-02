@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>Getting Started &#8212; Up Duck 0.0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
@@ -33,7 +34,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="getting-started">
+  <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <p>UP Deck is comprised of three components in order to do its thing:</p>
 <ul class="simple">
@@ -41,25 +42,25 @@
 <li><p>UP Deck Server</p></li>
 <li><p>OBS Lua script</p></li>
 </ul>
-<div class="section" id="mobile-app">
+<section id="mobile-app">
 <h2>Mobile App<a class="headerlink" href="#mobile-app" title="Permalink to this headline">¶</a></h2>
 <p>The mobile app is the preferred interface for working with your deck.
 Android and iOS versions are available on their respective stores.</p>
-</div>
-<div class="section" id="up-deck-server">
+</section>
+<section id="up-deck-server">
 <h2>UP Deck server<a class="headerlink" href="#up-deck-server" title="Permalink to this headline">¶</a></h2>
 <p>UP Deck Server is a lua application written on top of the <a class="reference external" href="https://love2d.org/">love2d</a> engine,
 this allows the server to be portable to Windows, macOS and Linux</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A GPU Driver Capable of OpenGL ES 2.0 is required</p>
-</div>
-<div class="section" id="windows-and-macos">
+</aside>
+<section id="windows-and-macos">
 <h3>Windows and macOS<a class="headerlink" href="#windows-and-macos" title="Permalink to this headline">¶</a></h3>
 <p>For Windows and macOS, simply <a class="reference external" href="downloadapp">download the desktop app</a> and use the installer to
 set up both the server and install love2d if it’s not already.</p>
-</div>
-<div class="section" id="linux">
+</section>
+<section id="linux">
 <h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
 <p>For Linux <a class="reference external" href="downloadapp">download the desktop app</a> and use your distribution’s installer to
 install a version of <a class="reference external" href="https://love2d.org/">love2d</a>:</p>
@@ -70,9 +71,9 @@ install a version of <a class="reference external" href="https://love2d.org/">lo
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ love UPDeck_xxx.love
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="obs-lua-script">
+</section>
+</section>
+<section id="obs-lua-script">
 <h2>OBS Lua script<a class="headerlink" href="#obs-lua-script" title="Permalink to this headline">¶</a></h2>
 <p>You can <a class="reference external" href="downloadobs">Download the OBS lua script</a> and save it just about anywhere. To
 install it simply Launch OBS and go to <span class="menuselection">Tools ‣ Scripts</span>
@@ -80,20 +81,20 @@ and use the ( <strong>+</strong> ) to add the script.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Set the message path. OBS will not respond with out it.</p>
-</div>
+</aside>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some times the script is not copied or configured when creating a new
 Scene Collection in OBS, this appears to be an OBS bug, check your message
 path is still configured after creating a new Scene Collection.</p>
-</div>
+</aside>
 <p>The only important attribute here is the <strong>Message Path</strong> it needs to be set
 to the folder that the UP Deck server is running from.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Linux it may be necessary to link <code class="docutils literal notranslate"><span class="pre">libobs.so</span></code> and <code class="docutils literal notranslate"><span class="pre">libobs.so.1</span></code></p>
-</div>
-<div class="section" id="message-path">
+<p>On Linux you may see <code class="docutils literal notranslate"><span class="pre">libobs.so:</span> <span class="pre">cannot</span> <span class="pre">open</span> <span class="pre">shared</span> <span class="pre">object</span> <span class="pre">file:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code>, you will need to link <code class="docutils literal notranslate"><span class="pre">libobs.so</span></code> and <code class="docutils literal notranslate"><span class="pre">libobs.so.1</span></code> (or <code class="docutils literal notranslate"><span class="pre">libobs.so.1</span></code>) in this case</p>
+</aside>
+<section id="message-path">
 <h3>Message Path<a class="headerlink" href="#message-path" title="Permalink to this headline">¶</a></h3>
 <p>The message path is used by both OBS and the UP Deck Server to communicate
 with each other using files at this path. The path on the server side can not
@@ -112,7 +113,7 @@ characters beyond the standard ascii table.</p></li>
 run UP Deck as an administrator as well. (UP Deck generally does not need to
 be run as Administrator)</p></li>
 </ul>
-<div class="section" id="windows">
+<section id="windows">
 <h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
 <p>Open the windows menu and type in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">appdata</span><span class="o">%</span>\<span class="n">UPDeck</span>\
@@ -121,8 +122,8 @@ be run as Administrator)</p></li>
 <p>Then copy and paste the resolved path from explorer into the
 <strong>Message Path</strong> (it should look like
 <code class="docutils literal notranslate"><span class="pre">C:\Users\YOURUSERNAME\AppData\Roaming\UPDeck)</span></code></p>
-</div>
-<div class="section" id="macos">
+</section>
+<section id="macos">
 <h4>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h4>
 <p>On macOS you can type into a shell:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="s2">&quot;~/Library/Application Support/LOVE/UPDeck/&quot;</span>
@@ -130,18 +131,18 @@ be run as Administrator)</p></li>
 </div>
 <p>And copy and paste the resolved path from finder (it should look like
 <code class="docutils literal notranslate"><span class="pre">/Users/user/Library/Application</span> <span class="pre">Support/LOVE/UPDeck/</span></code>)</p>
-</div>
-<div class="section" id="id2">
-<h4>Linux<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="linux-1">
+<h4>Linux<a class="headerlink" href="#linux-1" title="Permalink to this headline">¶</a></h4>
 <p>On linux you can echo the resolved path:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;${HOME}/.local/share/love/UPDeck&quot;
 </pre></div>
 </div>
 <p>Then copy and paste the resolved path into the <strong>Message Path</strong> (it should look like <code class="docutils literal notranslate"><span class="pre">/home/username/.local/share/love/UPDeck</span></code>)</p>
-</div>
-</div>
-</div>
-<div class="section" id="more-reading">
+</section>
+</section>
+</section>
+<section id="more-reading">
 <h2>More Reading<a class="headerlink" href="#more-reading" title="Permalink to this headline">¶</a></h2>
 <p>You can read more on the Up Deck website for info around getting familiar with
 the Apps:</p>
@@ -151,8 +152,8 @@ the Apps:</p>
 <li><p><a class="reference external" href="downloadmobile">Download the mobile app</a></p></li>
 <li><p><a class="reference external" href="appnav">Navigating around the mobile app</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -171,18 +172,18 @@ the Apps:</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-to-buttons.html">Introduction to buttons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-to-commands.html">Introduction to commands</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
+<p><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/moving-outside-the-box.html">Moving outside the box</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Working with commands</span></p>
+<p><span class="caption-text">Working with commands</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../commands.html">Deck commands</a></li>
 </ul>

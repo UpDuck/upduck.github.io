@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>Moving outside the box &#8212; Up Duck 0.0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
@@ -33,9 +34,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="moving-outside-the-box">
+  <section id="moving-outside-the-box">
 <h1>Moving outside the box<a class="headerlink" href="#moving-outside-the-box" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="security-prefix">
+<section id="security-prefix">
 <h2>Security Prefix<a class="headerlink" href="#security-prefix" title="Permalink to this headline">¶</a></h2>
 <p>UP Deck, while well intentioned is not secure.</p>
 <p># Communications are over plain text TCP
@@ -60,13 +61,13 @@ becomes very high.</p>
 </div></blockquote>
 <p>Why does HTTP increase this risk so much? HTTP is a well known, and is an easy to walk protocol, it provides rapid feedback to an actor and as such, much of the tools for exploiting the internet are based these easy exploit methods.</p>
 <p>Care would need to be taken in exposing the execute side of the deck, and even more care should be taken if you take the non-recommended course of exposing it to the internet.</p>
-</div>
-<div class="section" id="reducing-risk">
+</section>
+<section id="reducing-risk">
 <h2>Reducing Risk<a class="headerlink" href="#reducing-risk" title="Permalink to this headline">¶</a></h2>
 <p>The lecture above aside, steps can be taken to reduce risk if you still want
 to go down this path (and there are valid reasons to do so) We’d propose that
 you take the following into account (using nomenclature from <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2119.html"><strong>RFC 2119</strong></a>):</p>
-<div class="section" id="client-app">
+<section id="client-app">
 <h3>Client App<a class="headerlink" href="#client-app" title="Permalink to this headline">¶</a></h3>
 <p>The client app interface uses a dedicated port (default: 4445) to communicate
 over a raw TCP connection in clear text (unencrypted). Data exchanged over
@@ -81,20 +82,20 @@ encrypted tunneling (VPN).</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="http-server">
+</section>
+<section id="http-server">
 <h3>HTTP Server<a class="headerlink" href="#http-server" title="Permalink to this headline">¶</a></h3>
 <p>The http server has various urls that have different sensitivity, they can be
 classified as <strong>config</strong>, <strong>edit</strong>, and <strong>execute</strong>, which have different risks.</p>
 <ul class="simple">
 <li><p>The HTTP Server MUST NOT be generically exposed to the internet.</p></li>
 </ul>
-<div class="section" id="config">
+<section id="config">
 <h4>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h4>
 <p>The config urls, including <code class="docutils literal notranslate"><span class="pre">/,</span> <span class="pre">/setup,</span></code> are very sensitive and MUST NOT be
 exposed. As they can change ports, passwords and lock users out.</p>
-</div>
-<div class="section" id="edit">
+</section>
+<section id="edit">
 <h4>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h4>
 <p>The <strong>edit</strong> urls including <code class="docutils literal notranslate"><span class="pre">/deck,</span> <span class="pre">/schedule</span></code> are used to configure decks,
 or setup reoccurring commands.</p>
@@ -110,8 +111,8 @@ from the <strong>setup</strong></p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="execute">
+</section>
+<section id="execute">
 <h4>Execute<a class="headerlink" href="#execute" title="Permalink to this headline">¶</a></h4>
 <p>The <strong>execute</strong> urls, including <code class="docutils literal notranslate"><span class="pre">/xdeck/,</span> <span class="pre">/live,</span> <span class="pre">/liveDeck</span></code> are used to
 provide an interface to executing existing decks. Given careful construction
@@ -133,10 +134,10 @@ in configuring access controls to only specific decks:</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="options-to-expose-your-decks">
+</section>
+</section>
+</section>
+<section id="options-to-expose-your-decks">
 <h2>Options to expose your decks<a class="headerlink" href="#options-to-expose-your-decks" title="Permalink to this headline">¶</a></h2>
 <p>Exposing one of the <strong>execute</strong> urls should be relatively straightforward for
 the running a HTTP service on the internet.</p>
@@ -160,8 +161,8 @@ complex, but it does everything</p></li>
 but if you already have node and are only on a private network, its fine</p></li>
 <li><p>python http.server - another simple one, would be fine for private networks</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -180,18 +181,18 @@ but if you already have node and are only on a private network, its fine</p></li
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/intro-to-buttons.html">Introduction to buttons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/intro-to-commands.html">Introduction to commands</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
+<p><span class="caption-text">Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="stream-deck.html">Working with Elgato Stream Deck</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Moving outside the box</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Working with commands</span></p>
+<p><span class="caption-text">Working with commands</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../commands.html">Deck commands</a></li>
 </ul>

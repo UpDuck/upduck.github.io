@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>Welcome to Up Duck’s documentation! &#8212; Up Duck 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
@@ -32,8 +33,12 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-up-duck-s-documentation">
+  <section id="welcome-to-up-duck-s-documentation">
 <h1>Welcome to Up Duck’s documentation!<a class="headerlink" href="#welcome-to-up-duck-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this is a documentation site for both UP Deck and Up Duck</p>
+</aside>
 <p>Up Duck is a re-write of <a class="reference external" href="http://8up.uk">Up Deck</a> on <a class="reference external" href="https://godotengine.org/">godot engine</a>. This is done for
 various reasons among them:</p>
 <ul class="simple">
@@ -41,17 +46,20 @@ various reasons among them:</p>
 <li><p>The mobile app (Corona/Solar2d) and server (Love2d) are written in different engines.</p></li>
 </ul>
 <p>Godot offers some solution to the last one, in that It can target HTML5, Android, iOS, Win, Mac, and Linux all from the same codebase.</p>
-<div class="admonition">
-<p class="admonition-title">Todo</p>
-<p>fix this</p>
-</div>
-<p>(The original entry is located in index.rst, line 48 and can be found <a class="reference external" href="#todo-0"><em>here</em></a>.)</p>
-<div class="admonition">
-<p class="admonition-title">Todo</p>
-<p>and thi</p>
-</div>
-<p>(The original entry is located in index.rst, line 50 and can be found <a class="reference external" href="#todo-1"><em>here</em></a>.)</p>
-<div class="section" id="compatibility">
+<p>Why a game engine? The portability is a large portion, but it also solves some
+other ancillary problems, reactive UX and sound. Godot handles the reactive UX
+very well and has a large number of builtins that make it easy to provide the
+same interface that handles scaling, and porting well, this was lacking from
+Love2d, which is likely why the app was written in Solar2d instead. The sound
+system while built in in Love2d is also primitive, and without a handful of
+third-party plugins it would be difficult to provide as many effects as are
+possible out of the box in Godot.</p>
+<p>The drawback? Like Love2d, Godot requires a video card, specifically a driver capable of OpenGL ES 2.0. Basically anything from 2008 onward should easily
+support this. This functionally should exclude some Virtual Machines (VMs) that
+don’t offer a fully featured graphics driver (Azure VPS instances appear to fall
+in this group), but then again you probably want a graphics chipset to do video
+encoding anyway.</p>
+<section id="compatibility">
 <h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
 <p>Up through version 1, we will not be modifying anything to make it
 fundamentally incompatible with Up Deck. There may be new commands
@@ -60,7 +68,7 @@ changed in breaking ways. In this way, you can rely on the docs here
 as an add-on to the existing <a class="reference external" href="http://8up.uk">Up Deck</a> docs. Additionally, we will mark
 documents that only apply to <strong>Up Duck</strong>.</p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/tutorials/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="updeck/tutorials/intro-to-buttons.html">Introduction to buttons</a></li>
@@ -68,35 +76,27 @@ documents that only apply to <strong>Up Duck</strong>.</p>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Guides</span></p>
+<p><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
 <li class="toctree-l1"><a class="reference internal" href="updeck/guides/moving-outside-the-box.html">Moving outside the box</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Working with commands</span></p>
+<p><span class="caption-text">Working with commands</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/commands.html">Deck commands</a></li>
 </ul>
 </div>
-<div class="admonition" id="todo-0">
-<p class="admonition-title">Todo</p>
-<p>fix this</p>
-</div>
-<div class="admonition" id="todo-1">
-<p class="admonition-title">Todo</p>
-<p>and thi</p>
-</div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
+</section>
+</section>
+<section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
+</section>
 
 
           </div>
@@ -115,18 +115,18 @@ documents that only apply to <strong>Up Duck</strong>.</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Tutorials</span></p>
+<p><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/tutorials/getting-started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="updeck/tutorials/intro-to-buttons.html">Introduction to buttons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="updeck/tutorials/intro-to-commands.html">Introduction to commands</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Guides</span></p>
+<p><span class="caption-text">Guides</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/guides/stream-deck.html">Working with Elgato Stream Deck</a></li>
 <li class="toctree-l1"><a class="reference internal" href="updeck/guides/moving-outside-the-box.html">Moving outside the box</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Working with commands</span></p>
+<p><span class="caption-text">Working with commands</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="updeck/commands.html">Deck commands</a></li>
 </ul>
